@@ -13,6 +13,6 @@ This is a partial dump of source for the badge. The rest will come later. Full d
 
 1. Plug into USB-C, check for a `SNACKEYJR` or `CIRCUITPY` is mounted
 2. If only a single file remains, you will need to copy new python files to the badge
-3. Copy the contents of the `src/` folder from this report recursively onto the badge, you should have `code.py` and `boot.py` in the root folder of the badge
+3. Copy the contents of the `src/` folder from this repo recursively onto the badge, you should have `code.py` and `boot.py` in the root folder of the badge
 4. Wait patiently
 5. Your badge should bling again
