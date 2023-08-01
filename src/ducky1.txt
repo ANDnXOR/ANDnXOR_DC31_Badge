@@ -1,0 +1,24 @@
+REM This script works on MacOS, uncomment the second portion for Windows, or the third for linux
+LED_R
+DELAY 3000
+GUI SPACE
+DELAY 500
+STRING https://www.andnxor.com
+ENTER
+LED_G
+
+REM LED_R
+REM DELAY 1000
+REM GUI r
+REM DELAY 500
+REM STRING https://www.andnxor.com
+REM ENTER
+REM LED_G
+
+REM LED_R
+REM DELAY 1000
+REM CTRL ALT t
+REM DELAY 750
+REM STRING xdg-open https://www.andnxor.com
+REM ENTER
+REM LED_G

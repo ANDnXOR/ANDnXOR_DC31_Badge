@@ -1,0 +1,10 @@
+REM Author: PrickleyPaw
+REM Description: Simple "Hello World" to get things started
+REM Launch notepad type hello world can't get any easier than that
+CONTROL ESCAPE
+DELAY 200
+STRING notepad
+ENTER
+DELAY 500
+STRING Hello world 
+ENTER
