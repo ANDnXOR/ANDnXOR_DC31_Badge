@@ -94,8 +94,13 @@ If you received a badge early due to being a Philanthropist, the CTFd site will 
 
 Our badge flavor of CTF. Every year is a different challenge. We hope you enjoy it!
 
-THE BADGE CHALLENGES REQUIRE ACTIVATION AND WILL BE DONE USING THE 'REDACTED' COMMAND. 
-INSTRUCTIONS ARE ON CTFd AND WILL BE POSTED TO GITHUB AFTER THE CON.
+THE BADGE CHALLENGES REQUIRE ACTIVATION AND WILL BE DONE USING THE NOW UN-REDACTED '🤖' COMMAND. 
+
+Step 1 - Goto "/utils/dc31_badge_activation_img_dir.7z," unzip and copy all of the contents of the "/img" folder to the "/img" folder on the badge.
+Step 2 - RTFM.MD while you wait 1 minute for the badge to reboot, new files added to circuit python cause it to pause, wait, then reboot. Wait patiently before connecting over serial.
+Step 3 - At the BENDER CLI enter: $ 🤖 🍺 🦾 🛡️ 🦾 🍺
+All challenges on the badge will be unlocked and you will be presented with a flag, enter it here.
+Note: On some terminals the spacing of emojiis may look weird, ensure you only type a single space between each emoji.
 
 This requires use of a serial terminal, we HIGHLY recommend picocom because it supports extended character translation to... emojis. You're free to do what you want but if you choose to use a terminal that doesn't support the extended character set... gonna have a bad time. 
 
@@ -159,7 +164,7 @@ If you were sad that this year's badge is without screen, therefore lacking anim
 
 The 🌈 "bling" command lets you change the LED bling modes by passing an argument 0...5
 
-The 🥜 "jiff" command walks you through the steps of displaying ANSI static or animated images stored on the badge. Based on the source provided by Balssh ASCIIArt project, it was modified to produce images limited by the height of the terminal, not the width. Without getting into details, the limiting factor on animation "framerate" of attempting to do an animated jiff over serial with ANSI... is the rows. Make it bigger, more resolution, but it's slower and choppier. Make it smaller, it's faster, and a smudge. We believe we found the sweet spot. Make your own and experiment! The modified source of the ascii art project along with a bash script for your lazy assess will be placed on our github.
+The 🥜 "jiff" command walks you through the steps of displaying ANSI static or animated images stored on the badge. Based on the source provided by Balssh ASCIIArt project, it was modified to produce images limited by the height of the terminal, not the width. Without getting into details, the limiting factor on animation "framerate" of attempting to do an animated jiff over serial with ANSI... is the rows. Make it bigger, more resolution, but it's slower and choppier. Make it smaller, it's faster, and a smudge. We believe we found the sweet spot. Make your own and experiment! The modified source of the ascii art project along with a bash script for your lazy assess is in the "/util/ANSI_Jiff" directory
 
 # Troubleshooting #
 Usually the main issue people have when they first try and connect to hardware over serial, is that the default permissions do not belong to them in the OS; e.g. you try and launch picocom (or any other serial program and DENIED). Add yourself to the dialout group. If you do not know what that means, visit: https://gprivate.com/65a4f
